@@ -1,0 +1,16 @@
+<!-- 
+ให้น้องๆ ใช้ background แบบ gradient ในการเปลี่ยนสีพื้นหลังของเว็บนี้ด้วย CSS
+โดยเป็นรูปธงชาติประเทศอะไรก็ได้ (หากเป็นแถบสี ให้มีมากกว่า 3 แถบสี) 
+โดยแต่ละแถบ มีการไล่เฉยดสีเล็กน้อยอีกที
+- ตรงขอบในการเปลี่ยนสี ต้องคมชัด ไม่ไล่สี
+- ในแถบสีตัวเอง ให้ไล่เฉดสีเล็กน้อย เช่นความสว่าง เอาที่คิดว่าสวยได้เลย
+- มีโบนัสสำหรับคนที่ใช้  bakcground-blendmode ในการใส่ภาพพื้นหลังร่วมด้วย
+- หากภาพที่ใส่ดูขนาดไม่โอเค ใช้ background-size ได้ ลองใส่ value เป็น cover
+ -->
+ <style>
+    body{
+      height:100vh;
+      background-image: linear-gradient(to right, black 33%,yellow 33%,yellow 66%,red 66%),url(https://static.wikia.nocookie.net/keroro/images/9/93/Sgt-frog.jpg/revision/latest?cb=20120916030843) ;
+      background-blend-mode: darken;
+    }
+  </style>

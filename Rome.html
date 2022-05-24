@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Page Title</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+	<link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+
+	<style>
+		/* Setup Default=========================================*/
+		* {
+			box-sizing: inherit;
+			margin: 0;
+			padding: 0;
+		}
+
+		html {
+			font-size: 62.5%;
+		}
+
+		body {
+			position: relative;
+			box-sizing: border-box;
+			font-family: 'Kanit', sans-serif;
+		}
+        .ml-1 {
+            margin-left: 1rem;
+        }
+		.mt-2 {
+			margin-top: 2rem;
+		}
+
+
+		/* Layout Structure=========================================*/
+		.wrapper {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			height: 100vh;
+			width: 100%;
+			background: linear-gradient(to bottom right, #eee8dd, #e3d9c6);
+		}
+
+		/* Footer ====================================*/
+		.footer {
+			background-color: #333;
+			margin-top: 3rem;
+			padding: 1rem 0;
+			width: 100%;
+		}
+
+		.footer-text {
+			color: #fff;
+			font-size: 1.2rem;
+			text-align: center;
+		}
+
+
+		/* กรอบของการ์ด */
+		.card-container {
+			display: flex;
+			flex-wrap: nowrap;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			padding: 1rem;
+		}
+
+		/* Card ============================================*/
+		/* การ์ด */
+		.card {
+			position: relative;
+			width: 250px;
+			height: 350px;
+			background-color: rgba(0, 0, 0, 0.05);
+			box-shadow: -0.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.5);
+			border-radius: 4px;
+			transition: all 1s ease;
+		}
+
+
+		/* การ์ดที่ทำการ Flip */
+		.flip-card {
+			position: absolute;
+			right: 0;
+
+			width: 250px;
+			height: 350px;
+			perspective: 100rem;
+
+			transition: all 1s ease;
+			visibility: hidden;
+			z-index: 100;
+		}
+
+		/* This is done so content in the inside page can be selected */
+		.flip-card>* {
+			visibility: visible;
+		}
+
+		/* An inner container to hold the flip card. This excludes the inside page */
+		.flip-card-container {
+			height: 100%;
+			position: absolute;
+			right: 0;
+			transform-origin: left;
+			transform-style: preserve-3d;
+			transition: all 1s ease;
+			width: 100%;
+
+		}
+
+		/* การ์ดด้านหน้าเเละหลัง */
+		.card-front,
+		.card-back {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			backface-visibility: hidden;
+
+			border-radius: 4px;
+		}
+
+
+
+		/* การ์ดด้านหน้า */
+		.card-front {
+			height: 350px;
+			width: 250px;
+			background-color: #3baa40;
+		}
+
+		/* การ์ดด้านหน้าส่วนบน */
+		.card-front-top {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			padding: 0.75rem;
+
+			border-radius: 4px;
+		}
+
+		/*  fotter บนการ์ดด้านหน้า */
+		.bottom-footer {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			position: absolute;
+			bottom: 0;
+
+			width: 100%;
+			height: 50px;
+
+			padding: 1.5rem;
+			font-size: 1.75rem;
+
+			border-bottom-left-radius: 4px;
+			border-bottom-right-radius: 4px;
+		}
+
+		/* Card(Left) =================================================================*/
+
+		/* การ์ดด้าวนใน ฝั่งซ้าย */
+		.card-back {
+			transform: rotateY(180deg);
+		}
+
+		/* การ์ดด้าวนใน ฝั่งซ้าย (รูปภาพ) */
+		.card-back-img {
+			height: auto;
+			min-height: 100%;
+			object-fit: cover;
+			width: 100%;
+
+			border-top-left-radius: 4px;
+			border-bottom-left-radius: 4px;
+		}
+
+		/* Card(Right) =================================================================*/
+		/* ด้านในของการ์ด ฝั่งขวา (container) */
+		.inside-container {
+			width: 250px;
+			height: 100%;
+			background-color: #fafbfa;
+			box-shadow: inset 20rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.25);
+			padding: 2rem;
+			position: absolute;
+			right: 0;
+			z-index: 1;
+
+			transition: all 1s ease;
+			border-top-right-radius: 4px;
+			border-bottom-right-radius: 4px;
+		}
+
+		/* ด้านในของการ์ด ฝั่งขวา(content) */
+		.inside-content {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			width: 100%;
+		}
+
+		/* ตัวหนังสือของการ์ดด้านใน ฝั่งขวา (หัวข้อ) */
+		.inside-content-header {
+			font-size: 2.5rem;
+			text-align: center;
+		}
+
+
+		/* ตัวหนังสือของการ์ดด้านใน ฝั่งขวา (เนื้อหา) */
+		.inside-content-text {
+			text-align: center;
+			font-size: 1.5rem;
+			color: #333;
+		}
+
+		/* ส่วนของคติประจำใจ (หัวข้อ)*/
+		.inside-content-qoute {
+			text-align: center;
+			font-size: 1.75rem;
+			font-weight: 500;
+			color: rgba(28, 211, 89, 0.89);
+		}
+
+		/* ส่วนของคติประจำใจ (เนื้อหา)*/
+		.inside-content-qoute p {
+			margin-top: 1rem;
+			font-size: 1.25rem;
+		}
+
+		/* container ส่วนของ contact */
+		.inside-content-contact-container {
+			position: absolute;
+			bottom: 2rem;
+			left: 2rem;
+		}
+
+		/* ส่วนของ contact */
+		.inside-content-contact {
+			display: flex;
+			align-items: center;
+		}
+
+		.inside-content-contact a {
+			text-decoration: none;
+		}
+
+        /* ส่วนของ contact facebook*/
+        .inside-content-contact .facebook {
+            display: flex;
+            align-items: center;
+            font-size: 1.75rem;
+            color: rgb(30, 120, 255);
+            border-radius: 4px;
+        }
+
+        /* ส่วนของ contact instagram*/
+        .inside-content-contact .instagram {
+            display: flex;
+            align-items: center;
+            margin-left: 2px;
+            font-size: 1.5rem;
+            color: #fff;
+            border-radius: 4px;
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
+
+        .inside-content-contact .github {
+            display: flex;
+            align-items: center;
+            font-size: 1.75rem;
+            color: #333;
+            border-radius: 4px;
+        }
+
+        /* ส่วนของ contact icon*/
+        .inside-content-contact .instagram i,
+        .inside-content-contact .facebook i,
+        .inside-content-contact .github i {
+            padding: 1.5px;
+        }
+
+    
+
+		/* Functionality =================================================================*/
+		/* เซตความกว้างเป็น 2 เท่า ของการ์ด เพื่อให้ตอนเปิดจะอยู่ตรงกลาง */
+		.card:hover {
+			width: 500px;
+			box-shadow: -0.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.75);
+		}
+
+		/* เวลา a:hover ตอนสมุดเปิดจะมี Animation */
+		.card:hover .flip-card-container {
+			transform: rotateY(-180deg);
+		}
+
+		/* เวลา a:hover ตอนสมุดเปิดจะมีเงาเปิด-ปิดสมุด */
+		.card:hover .inside-container {
+			box-shadow: inset 1rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.15);
+		}
+
+
+		/*================================================================================*/
+		/*================================ Customize =====================================*/
+		/*================================================================================*/
+		.front-text-rome {
+            margin-left: 2.8em;
+            position:relative;
+            transform: rotate(-90deg);
+			bottom: 80px;
+			z-index: 10000;
+			font-size: 7rem;
+			color: #eeeadd;
+            opacity: 0.5;
+		}
+
+		.img-front-rome {
+			padding: 0;
+			margin: 0;
+			position: absolute;
+
+			margin-right: 12.5rem;
+			bottom: 50px;
+			z-index: 1000;
+			width: 375px;
+			height: 375px;
+		}
+
+		.card-front-bg-rome {
+			background: radial-gradient(ellipse at top, #55a2e0, transparent);
+		}
+
+		.front-footer-bg-rome {
+			background-color: #175a5d;
+			color: white;
+		}
+
+
+		.theme-rome {
+			color: #22a896;
+		}
+
+		.contact-rome a:hover {
+			color: #5089dd;
+		}
+
+	</style>
+
+
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<section class="card-container mt2">
+			<div class="card">
+				<div class="flip-card">
+					<div class="flip-card-container">
+						<div class="card-front">
+							<div class="card-front-top card-front-bg-rome">
+								<!-- link รูปภาพหน้าปก -->
+								<img class="img-front-rome"
+                                    src="https://cdn.discordapp.com/attachments/933716891158065182/933716947026186270/70494049_1391252364370348_6342539413305688064_n-removebg-preview.png">
+                                <p class="front-text-rome">Rome</p>
+                            </div>
+                            <!-- ส่วนด้านล่างของหน้าปก -->
+                            <div class="bottom-footer front-footer-bg-rome">
+                                <div>64070125</div>
+                                <div>Freshman IT 19</div>
+                            </div>
+                        </div>
+
+                        <div class="card-back">
+                            <!-- link รูปภาพด้านในการ์ด (ไม่ต้องลบ card-back-img) -->
+                            <img class="card-back-img img-rome"
+                                src="https://scontent.fbkk9-3.fna.fbcdn.net/v/t1.6435-9/39913487_1111878055641115_3644966262523559936_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=174925&_nc_ohc=HuX6e1-dg5sAX_ybxFX&tn=iE38DiDtajpU_b7T&_nc_ht=scontent.fbkk9-3.fna&oh=00_AT9S49FMmlcNkLI0x9oDqIZ1bK_cuWGfO9TmzHNispH3bA&oe=620D8402">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inside-container">
+                    <div class="inside-content">
+                        <div class="inside-content-header theme-rome">
+                            My Profile
+                        </div>
+                        <!-- -ข้อมูลส่วนตัว -->
+                        <p class="inside-content-text mt-2">
+                            Kampanat Konklong
+                        </p>
+
+                        <div class="inside-content-qoute mt-2 theme-rome">
+                            คติประจำใจ
+                            <p class="inside-content-text">
+                                สุขใดไม่เท่าล้วงกระเป๋า แล้วเจอตังค์ 555
+                            </p>
+                        </div>
+
+                        <div class="inside-content-contact-container">
+                            <div class="inside-content-contact contact-rome">
+                                <span class="facebook">
+                                    <i class="fab fa-facebook-square"></i>
+                                </span>
+                                <!-- link facebook -->
+                                <a href="https://www.facebook.com/kampanat.konklong" class="inside-content-text ml-1">Kampanat Konklong</a>
+                            </div>
+                            <div class="inside-content-contact contact-rome">
+                                <span class="instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </span>
+                                <!-- link ig -->
+                                <a href="https://www.instagram.com/scallet_rome/" class="inside-content-text ml-1">Scallet_Rome</a>
+                            </div>
+                            <div class="inside-content-contact contact-rome">
+	                            <span class="github">
+                                    <i class="fab fa-github"></i>
+                                </span>
+                                <a href="https://github.com/RomeyKung" class="inside-content-text ml-1">RomeyKung</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <footer class="footer">
+            <p class="footer-text">Created by Party B P'Thun</p>
+        </footer>
+    </div>
+</body>
+
+
+</html>

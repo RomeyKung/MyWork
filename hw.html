@@ -1,0 +1,95 @@
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #171717;
+            --w:white;
+            --g:gray;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .box{
+            position:relative;
+            background-image: url("https://wallpapercave.com/wp/wp7992445.jpg");
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            border-radius: 30px;
+        }
+        #toggle-1{
+            position:absolute;
+            bottom:3%;
+            right:8%;
+            background:transparent;
+            padding:.5em;
+            cursor:pointer;
+            color:white;
+            font-family: 'Roboto Condensed', sans-serif;
+            border-radius:50px;
+            border: 10px solid;
+            border-image-slice: 1;
+            border-width: 2px;
+            animation: 0.5s  spin infinite
+        }
+        #toggle-2{
+            position:absolute;
+            bottom:3%;
+            right:1%;
+            background:transparent;
+            padding:.5em;
+            cursor:pointer;
+            color:white;
+            font-family: 'Roboto Condensed', sans-serif;
+            border-radius:50px;
+            border: 10px solid;
+            border-image-slice: 1;
+            border-width: 2px;
+            animation: 0.5s  spin infinite
+
+            
+        }
+        .name{
+            color: white;
+            position: absolute;
+            top:0%;
+            right: 2%;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+        @keyframes spin{
+            0% {border-image-source: linear-gradient(to right, var(--g), var(--w), var(--w) , var(--w), var(--w))}
+            25% {border-image-source: linear-gradient(to right, var(--w), var(--g), var(--w), var(--w), var(--w))}
+            50% {border-image-source: linear-gradient(to right, var(--w), var(--w), var(--g) , var(--w), var(--w))}
+            75% {border-image-source: linear-gradient(to right, var(--w), var(--w), var(--w) , var(--g), var(--w))}
+            100% {border-image-source: linear-gradient(to right, var(--w), var(--w), var(--w) , var(--w), var(--g))}
+        }
+    </style>
+    <script>
+        function anime2(){
+            document.querySelector(".box").style.backgroundImage = "url('https://images.hdqwalls.com/download/anime-ninja-4k-lo-1366x768.jpg')"
+            document.querySelector(".box").style.transition= "background 2s ease-out";
+        }
+        function anime1(){
+            document.querySelector(".box").style.backgroundImage = "url('https://wallpapercave.com/wp/wp7992445.jpg')"
+            document.querySelector(".box").style.transition= "background 2s ease-out";
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <button id="toggle-1" onclick="anime1()">
+            Anime 1
+        </button>
+        <button id="toggle-2" onclick="anime2()">
+            Anime 2
+        </button>
+    </div>
+</body>
+</html>

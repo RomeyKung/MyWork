@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <title>SVG
+    </title>
+    <style>
+      body{
+        background:rgb(224, 167, 109);
+        margin:0em;
+        margin-top:2em;
+        font-family:sans-serif;
+      }
+      svg{
+        background-size:cover;
+        opacity: 0.7;
+        width:90vmin;
+        height:90vmin;
+        display:block;
+        margin:auto;
+        animation: wave 2.5s infinite;
+      }
+      svg:hover{
+        background-image:url("https://cdn.discordapp.com/attachments/921714397464903730/967356760669171722/unknown.png");
+        background-size:cover;
+        opacity: 0.7;
+        width:90vmin;
+        height:90vmin;
+        display:block;
+        margin:auto;
+        animation: shake 2s cubic-bezier(.36,.07,.19,.97) both infinite;
+      filter:
+        drop-shadow(0 0 3px #f24983)
+        drop-shadow(0 0 9px #f24983)
+        drop-shadow(0 0 15px #f24983);
+      }
+      @keyframes shake {
+        10%, 90% {
+            transform: translate3d(-1px, 0, 0);
+            filter: 
+            drop-shadow(0 0 3px #Eaf249)
+            drop-shadow(0 0 9px #Eaf249)
+            drop-shadow(0 0 15px #Eaf249);
+        }
+
+        20%, 80% {
+            transform: translate3d(2px, 0, 0);
+            filter: 
+            drop-shadow(0 0 3px #49F278)
+         drop-shadow(0 0 9px #49F278)
+         drop-shadow(0 0 15px #49F278);
+        }
+
+        30%, 50%, 70% {
+            transform: translate3d(-4px, 0, 0);
+            filter: 
+            drop-shadow(0 0 3px #5449f2)
+            drop-shadow(0 0 9px #5449f2)
+            drop-shadow(0 0 15px #5449f2)
+        }
+
+        40%, 60% {
+            transform: translate3d(4px, 0, 0);
+            filter: 
+            drop-shadow(0 0 3px #f24983)
+         drop-shadow(0 0 9px #f24983)
+         drop-shadow(0 0 15px #f24983)
+        }
+    }
+    @keyframes wave {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }  
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) } 
+  100% { transform: rotate( 0.0deg) }
+}
+
+
+    </style>
+  </head>
+  <body>
+    <svg viewBox="0 0 100 100">
+
+            <!-- <path  d="m45,50 a1 1,0,0 0,26 0" stroke="black" fill="#FFA409" stroke-linecap="butt"></path> -->
+            <!-- face + ears -->
+            <path  d="m45,50 a1 1,0,0 0,26 0" stroke="black" fill="white" stroke-linecap="butt"></path>
+            <path  d="m70,50 v-15 l-8,5" stroke="black" fill="#FFA409" stroke-linecap="butt"></path>
+            <path  d="m45,50 a1 1,0,0 1,26 0" stroke="black" fill="#FFA409" stroke-linecap="butt"></path>
+            <path  d="m45,50 v-15 l8,5" stroke="black" fill="#FFA409" stroke-linecap="butt"></path>
+
+            <!-- คิ้ว -->
+            <ellipse cx="55" cy="40" rx="3" ry="2" fill="white"/>
+            <ellipse cx="65" cy="40" rx="3" ry="2" fill="white"/>
+
+            <!-- eye -->
+            <ellipse cx="55" cy="45" rx="3" ry="2" fill="black"/>
+            <ellipse cx="65" cy="45" rx="3" ry="2" fill="black"/>
+            <!-- nose -->
+            <ellipse cx="60" cy="50" rx="3" ry="2" fill="black"/>
+            <!-- mouth -->
+            <path  d="m55,55 h10" stroke="black" fill="#E9BFA0" stroke-linecap="butt"></path>
+            <path  d="m55,55 l5,5 l5,-5" stroke="black" fill="#E9BFA0" stroke-linecap="butt"></path>
+            <path  d="m55,55 h10" stroke="black" fill="#FFA409" stroke-linecap="butt"></path>
+
+    </svg>
+  </body>
+</html>
+
+

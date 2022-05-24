@@ -1,0 +1,90 @@
+<!-- 
+เรื่อง dataset 
+ทำให้คลิกแล้ว ตำแหน่งเปลี่ยน โดยใช้ dataset โดนเปลี่ยน position โดยประมาณ
+แล้วคลิก มน หรือ กลม ทำให้กล่องเป็นแบบมน หรือ กลม 
+-->
+<style>
+    body{
+        height:100vh;
+        background-image:url('https://unblast.com/wp-content/uploads/2018/12/Wood-Pattern-2.jpg');
+        background-size:cover;
+        perspective:300vmin;
+        margin:0;
+    }
+    div{
+      --top: 50px;
+      --left: 50px;
+
+      background-image:url('https://c4.wallpaperflare.com/wallpaper/415/319/589/red-wood-pattern-wallpaper-preview.jpg');
+      height:100px;
+      width:100px;
+      top:calc(50% - var(--top));
+      left:calc(50vh - var(--left));
+      position:fixed;
+      border-radius:10px;
+      box-shadow:0px 10px 10px #0005;
+      transition:.3s;
+    }
+    div[data-type="klom"]{
+      border-radius:100px;
+    }
+    div[data-type="mon"]{
+      border-radius:10px;
+    }
+  </style>
+  <button onclick="right_top()">
+    ขวาบน
+  </button>
+  <button onclick="right_bot()">
+    ขวาล่าง
+  </button>
+  <button onclick="left_bot()">
+    ซ้ายล่าง
+  </button>
+  <button onclick="mid()">
+    กลาง
+  </button>
+  <br>
+  <button onclick="wood.dataset.type = 'klom'">
+    กลม
+  </button>
+  <button onclick="wood.dataset.type = 'mon'">
+    มน
+  </button>
+  <div id="wood" data-type="mon" data-po="1">
+  </div>
+  <script>
+    function right_top(){
+      var val = document.getElementById("wood");
+      val.style.setProperty("--top",100+"px")
+      val.style.setProperty("--left",-200+"px")
+    }
+    function left_bot(){
+      var val = document.getElementById("wood");
+      val.style.setProperty("--top",-100+"px")
+      val.style.setProperty("--left",200+"px")
+    }
+    function right_bot(){
+      var val = document.getElementById("wood");
+      val.style.setProperty("--top",-100+"px")
+      val.style.setProperty("--left",-200+"px")
+    }
+    function mid(){
+      var val = document.getElementById("wood");
+      val.style.setProperty("--top",50+"px")
+      val.style.setProperty("--left",50+"px")
+    }
+  </script>
+   
+   div[data-po="topr"]{
+    top : 0;
+    left : calc(100% - 100px);
+  }
+    div[data-po="bottomr"]{
+    top : -100%;
+    left : calc(100% - 100px);
+  }
+    div[data-po="bottoml"]{
+    top : 0;
+    left : calc(100% - 100px);
+  }

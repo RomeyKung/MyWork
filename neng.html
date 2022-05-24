@@ -1,0 +1,667 @@
+<html><head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&amp;family=Yeseva+One&amp;display=swap" rel="stylesheet">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			background: #e9e9e9;
+			font-family: 'IBM Plex Sans Thai', sans-serif; 
+			padding-bottom: 150px;
+            background: linear-gradient(0deg,hsl(95, 100%, 50%, .5), hsl(40, 80%, 50%, .5));
+			/* border:5px solid black; */
+		}
+
+		.container {
+			display: flex;
+			justify-content: flex-start;
+			padding-bottom: 50px;
+			width: 425vh;
+			margin-left: 10vh;
+		}
+
+		.title {
+			position: fixed;
+			text-align: center;
+			font-size: 9vh;
+			font-family: 'Yeseva One', cursive;
+			color: #000;
+			/* position: fixed; */
+			width: 100%;
+            text-shadow:2px 2px 4px #000000;
+		}
+
+		.sign {
+			width: 100%;
+			margin-top: 5.5vh;
+			position: relative;
+			height: 9vh;
+			margin-bottom: 10%;
+			text-align: center;
+		}
+
+		.content {
+			width: 30vh;
+			text-align: center;
+			font-size: 3vh;
+			margin-top: 20%;
+			letter-spacing: 1px;
+			color: #000;
+			transform: rotateX(-90deg) translateZ(2vh) translateY(1vh);
+			line-height: 3.5vh;
+		}
+
+		.main {
+			transform-style: preserve-3d;
+			width: 30vh;
+			height: 30vh;
+			margin: 2rem 2rem;
+			transform: translatey(20vh);
+			animation: main 2s infinite linear alternate;
+		}
+
+		.all_plate {
+			transform-style: preserve-3d;
+			/* animation:base 9s infinite ease; */
+			transform: rotateX(70deg) rotateZ(17deg);
+			animation-play-state: running;
+			transition: transform 1s linear;
+
+		}
+
+		.all_plate:hover {
+			transform: rotateX(70deg) rotateZ(0deg);
+		}
+
+		.plate {
+			transform-style: preserve-3d;
+			transform-origin: center bottom;
+			background-size: cover;
+			background-position: center;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+		.p1 {
+			width: 30vh;
+			height: 30vh;
+			transform: rotateX(-90deg);
+			background-image: url('https://s.isanook.com/jo/0/rp/r/w700/ya0xa0m1w0/aHR0cDovL2ltYWdlLmpvb3guY29tL0pPT1hjb3Zlci8wLzljMWJmMGMxNTA0ZjRlOWEvMTAwMC5qcGc=.jpg');
+		}
+
+		.p2 {
+			width: 5vh;
+			height: 30vh;
+			background: hsl(280, 27%, 74%);
+			transform: rotateX(-90deg) rotatey(90deg);
+			transform-origin: left bottom;
+		}
+
+		.p3 {
+			width: 5vh;
+			height: 30vh;
+			background: hsl(280, 27%, 74%);
+			transform: rotateX(-90deg) rotatey(-90deg) translateZ(-25vh);
+			transform-origin: right bottom;
+		}
+
+		.p4 {
+			width: 30vh;
+			height: 30vh;
+			transform: rotateX(-90deg) rotateY(180deg) translateZ(5vh);
+			background: hsl(280, 27%, 74%);
+			box-shadow: 0px -100px 200px #0006 inset;
+			transform-origin: center bottom;
+			background-size: cover;
+			background-position: top center;
+		}
+
+		.p5 {
+			width: 30vh;
+			height: 5vh;
+			transform: translateY(25vh);
+			background: hsl(280, 27%, 74%);
+		}
+
+		.p6 {
+			width: 30vh;
+			height: 5vh;
+			transform: translateY(25vh) translateZ(30vh);
+			background: hsl(280, 27%, 74%);
+			transition: transform 1s;
+			transition-delay: 1.85s;
+		}
+
+		.shadow {
+			width: 30vh;
+			height: 40vh;
+			transform: rotateX(180deg) translateY(50vh);
+			background: linear-gradient(180deg, hsla(0, 0%, 0%, 1) 0%,
+			hsla(0, 0%, 0%, .1) 100%);
+			opacity: .25;
+			box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+		}
+
+		.shellac {
+			width: 30vh;
+			height: 30vh;
+			background-image: url('https://cdn.discordapp.com/attachments/812749326543487058/937928372221255690/vinyl_PNG18.png');
+			background-size: cover;
+			transform: rotateX(-90deg) translateY(-15vh) translateZ(10.1vh);
+			transition: transform 3s;
+		}
+
+		.all_plate:hover .shellac {
+			transform: rotateX(-90deg) translateY(-40vh) translateZ(13vh) rotateZ(360deg);
+
+		}
+
+		.all_plate:hover .p6 {
+			transform: rotateX(-90deg) translateY(-30vh) translateZ(25vh);
+			transition-delay: 0s;
+		}
+
+		#lilac {
+			width: 100%;
+			height: 100%;
+			transform: scale(0.35);
+			background-size: cover;
+			border-radius: 50%;
+			//background-image: url(https://pbs.twimg.com/profile_images/1374979417915547648/vKspl9Et_400x400.jpg)
+		}
+
+		@keyframes base {
+			0% {
+				transform: rotateX(70deg) rotateZ(0deg)
+			}
+			100% {
+				transform: rotateX(70deg) rotateZ(360deg);
+			}
+		}
+
+		@keyframes gradient {
+			50% {
+				background-position: 100% 50%;
+			}
+		}
+
+		.up {}
+
+		/*-------------------------------------------------------------------------*/
+
+		.img1 {
+			background-image: url('https://i.scdn.co/image/ab67616d0000b2737389243fc45d191b8fd6421e');
+		}
+
+		.disc1 {
+			background-image: url('https://i.scdn.co/image/ab67616d0000b2737389243fc45d191b8fd6421e');
+		}
+
+		.color1_1 {
+			background: hsl(217, 47%, 78%)
+		}
+
+		.color1_2 {
+			background: hsl(217, 47%, 70%);
+		}
+
+		.color1_3 {
+			background: hsl(217, 47%, 62%);
+		}
+
+
+		/*--------------------------------หมูกรอบ------------------------------------*/
+		.img2 {
+			background-image: url('http://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/082/341/788/82341788_1634542366123_1_600x600.JPG');
+		}
+
+		.disc2 {
+			background-image: url('https://i.pinimg.com/564x/ed/42/8f/ed428ffdbe94a3c64331c3f24465964b.jpg');
+		}
+
+		.color2_1 {
+			background: hsl(280, 27%, 66%);
+		}
+
+		.color2_2 {
+			background: hsl(280, 27%, 58%);
+		}
+
+		/*-------------------------------------------------------------------*/
+
+		/*Oat*/
+		.img3 {
+			background-image: url('https://i.scdn.co/image/ab67616d0000b273114bd052a6e642745d450756');
+		}
+
+		.disc3 {
+			background-image: url('https://cms.dmpcdn.com/musicarticle/2021/11/30/8a06e290-5185-11ec-b206-4358c5e580ae_original.jpg');
+		}
+
+		.color3_1 {
+			background: hsl(351, 90%, 64%);
+		}
+
+		.color3_2 {
+			background: hsl(351, 90%, 56%);
+		}
+
+		.color3_3 {
+			background: hsl(351, 90%, 48%);
+		}
+
+		/*------------------------DEW--------------------------------------------*/
+		.img4 {
+			background-image: url('https://images-ext-1.discordapp.net/external/mporVlG7fm0QgTE2uLuKuTtl0Bfpx1rG_R7-uPkGPpQ/https/images.genius.com/e449e476f5b272078bb0f418ec160df8.1000x1000x1.jpg?width=645&height=645');
+		}
+
+		.disc4 {
+			background-image: url('https://images-ext-1.discordapp.net/external/mporVlG7fm0QgTE2uLuKuTtl0Bfpx1rG_R7-uPkGPpQ/https/images.genius.com/e449e476f5b272078bb0f418ec160df8.1000x1000x1.jpg?width=645&height=645');
+		}
+
+		.color4_1 {
+			background: hsl(30, 65%, 80%);
+		}
+
+		.color4_2 {
+			background: hsl(30, 65%, 72%);
+		}
+
+		.color4_3 {
+			background: hsl(30, 65%, 64%);
+		}
+
+		/*---------------------------Fern----------------------------------------------*/
+		.img5 {
+			background-image: url('https://images.thaiza.com/song/19468-1-1.jpg');
+		}
+
+		.disc5 {
+			background-image: url('https://images.thaiza.com/song/19468-1-1.jpg');
+		}
+
+		.color5_1 {
+			background: hsl(170, 44%, 66%);
+		}
+
+		.color5_2 {
+			background: hsl(170, 44%, 58%);
+		}
+
+		.color5_3 {
+			background: hsl(170, 44%, 50%);
+		}
+
+		/*------------------------Bill-------------------------------------------------*/
+		.img6 {
+			background-image: url('https://i.scdn.co/image/ab67616d0000b2734133716cfc80f0a138dc5719');
+		}
+
+		.disc6 {
+			background-image: url('https://townsquare.media/site/366/files/2014/06/Starset.jpg?w=1200&h=0&zc=1&s=0&a=t&q=89');
+		}
+
+		.color6_1 {
+			background: hsl(210, 100%, 17%);
+		}
+
+		.color6_2 {
+			background: hsl(210, 100%, 9%);
+		}
+
+		.color6_3 {
+			background: hsl(210, 100%, 1%);
+		}
+
+		/*-------------------------------------------------------------------------*/
+		/* boss*/
+		.img7 {
+			background-image: url('https://1.bp.blogspot.com/-vN8Mi8-cjCg/YZ-OUDwf2nI/AAAAAAAAKvc/n8T28X1Jf20xW798TCCZGv1TTrhnxLd1QCLcBGAsYHQ/w400-h400/ab67616d0000b2738220318495ef2dfbfa0a666f.jpg');
+		}
+
+		.disc7 {
+			background-image: url('https://1.bp.blogspot.com/-vN8Mi8-cjCg/YZ-OUDwf2nI/AAAAAAAAKvc/n8T28X1Jf20xW798TCCZGv1TTrhnxLd1QCLcBGAsYHQ/w400-h400/ab67616d0000b2738220318495ef2dfbfa0a666f.jpg');
+		}
+
+		.color7_1 {
+			background: linear-gradient(-45deg, hsla(197, 55%, 66%, 1), hsla(42, 44%, 66%, 1));
+		}
+
+		.color7_2 {
+			background: hsl(197, 55%, 58%);
+		}
+
+		.color7_3 {
+			background: hsl(197, 55%, 50%);
+		}
+
+		/*-------------------------------------------------------------------------*/
+		.img8 {
+			background-image: url('https://cdn.discordapp.com/attachments/934448090172239882/938492386655490169/IMG_6593.jpg');
+		}
+
+		.disc8 {
+			background-image: url('https://cdn.discordapp.com/attachments/934448090172239882/938492386655490169/IMG_6593.jpg');
+		}
+
+		.color8_1 {
+			background: hsl(84, 38%, 0%);
+		}
+
+		.color8_2 {
+			background: hsl(84, 38%, 0%);
+		}
+
+		.color8_3 {
+			background: hsl(84, 38%, 0%);
+		}
+
+		/*-------------------------------------------------------------------------*/
+		/* Book */
+		.img9 {
+			background-image: url('https://i.scdn.co/image/ab67616d0000b2737af74715d7d687a49b8cefeb');
+		}
+
+		.disc9 {
+			background-image: url('https://i.scdn.co/image/ab67616d0000b2737af74715d7d687a49b8cefeb');
+		}
+
+		.color9_1 {
+			background: hsl(0, 83%, 25%);
+		}
+
+		.color9_2 {
+			background: hsl(0, 83%, 17%);
+		}
+
+		.color9_3 {
+			background: hsl(0, 83%, 9%);
+		}
+
+		/* ---------------------------------------------------------------------- */
+		/* NEW */
+		.img10 {
+			background-image: url('https://media.discordapp.net/attachments/877745544380944465/938360619793547274/latest.png?width=676&height=676');
+		}
+
+		.disc10 {
+			background-image: url('https://media.discordapp.net/attachments/877745544380944465/938472807732482078/ab67616d0000b27357dc7cb70292f0456d9ba806.png');
+		}
+
+		.color10_1 {
+			background: hsla(0, 0%, 53%, .9);
+		}
+
+		.color10_2 {
+			background: hsla(0, 0%, 40%, 1);
+		}
+
+		.color10_3 {
+			background: hsla(0, 0%, 32%, 1);
+		}
+
+		/* ---------------------------------------------------------------------- */
+		/* neng */
+		.img11 {
+			background-image: url('https://cdn.discordapp.com/attachments/930100886003396682/938479640232722493/The-Walters-I-Love-You-So-Lyrics.png');
+		}
+
+		.disc11 {
+			background-image: url('https://cdn.discordapp.com/attachments/930100886003396682/938479640232722493/The-Walters-I-Love-You-So-Lyrics.png');
+		}
+
+		.color11_1 {
+			background: hsla(0, 0%, 17%, 1);
+		}
+
+		.color11_2 {
+			background: hsla(0, 0%, 9%, 1);
+		}
+
+		.color11_3 {
+			background: hsla(0, 0%, 1%, 1);
+		}
+
+		#mhuukrob:hover .music {
+			opacity: 1;
+      transition-delay: 1s;
+		}
+
+		.music {
+			position: fixed;
+			opacity: 0;
+			transition: .5s;
+      transition-delay: 0s;
+			transform: rotateX(-90deg) translateZ(2vh) translateY(1vh) translateZ(-5.5vh);
+			margin-bottom: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="sign">
+		<p class="title">A-Neng's<br>Favorite song</p>
+  </div>
+
+  <div class="container">
+    <div class="box">
+      <div class="main up">
+        <div class="all_plate" id="mhuukrob">
+          <div class="shellac"><div class="disc1" id="lilac"></div></div>
+          <div class="plate p1 img1"></div>
+          <div class="plate p2 color1_2"></div>
+          <div class="plate p4 color1_3"></div>
+          <div class="plate p5 color1_2"></div>
+          <div class="plate p6 color1_1"></div>
+          <div class="plate p3 color1_2"></div>
+          <div class="plate shadow"></div>
+          <p class="content">PP<br>"Every day"</p><p>
+          </p><div class="music">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/636T1GeuPpgrtj9qcULq3I?utm_source=generator" width="100%" height="80" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe></div>
+         </div>
+     </div>
+      <!-- <p class="content">LILAC<br>MhuuKrob's pick</p> -->
+    </div>
+    <div class="box">
+      <div class="main">
+        <div class="all_plate" id="mhuukrob">
+          <div class="shellac"><div class="disc2" id="lilac"></div></div>
+          <div class="plate p1 img2"></div>
+          <div class="plate p2"></div>
+          <div class="plate p4 color2_2"></div>
+          <div class="plate p5"></div>
+          <div class="plate p6"></div>
+          <div class="plate p3 color2_1"></div>
+          <div class="plate shadow"></div>
+          <p class="content">MhuuKrob<br>"strawberry moon"</p>
+          <div class="music">
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2g0LdZQce9xlcHb1mBJyuz?utm_source=generator" width="100%" height="80" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe></div>
+      </div>
+     </div>
+      <!-- <p class="content">LILAC<br>MhuuKrob's pick</p> -->
+    </div>
+    <div class="box">
+      <div class="main">
+        <div class="all_plate" id="mhuukrob">
+          <div class="shellac"><div class="disc3" id="lilac"></div></div>
+          <div class="plate p1 img3"></div>
+          <div class="plate p2 color3_2"></div>
+          <div class="plate p4 color3_3"></div>
+          <div class="plate p5 color3_2"></div>
+          <div class="plate p6 color3_1"></div>
+          <div class="plate p3 color3_2"></div>
+          <div class="plate shadow"></div>
+          <p class="content">Oat<br>"เอาปากกามาวง"</p>
+          <div class="music">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4aDz9NTsLULSvewSLg8lih?utm_source=generator" width="100%" height="80" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe></div>
+      </div>
+      </div>
+     </div>
+    <!-- </div> -->
+    <!-- <p class="content">LILAC<br>MhuuKrob's pick</p> -->
+   <!-- <div class="container"> -->
+    <div class="box">
+      <div class="main">
+        <div class="all_plate" id="mhuukrob">
+          <div class="shellac"><div class="disc4" id="lilac"></div></div>
+          <div class="plate p1 img4"></div>
+          <div class="plate p2 color4_2"></div>
+          <div class="plate p4 color4_3"></div>
+          <div class="plate p5 color4_2"></div>
+          <div class="plate p6 color4_1"></div>
+          <div class="plate p3 color4_2"></div>
+          <div class="plate shadow"></div>
+          <p class="content">DEW<br>"sakura koi"</p>
+          <div class="music">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2XrFQdiYSSxHXpK7lawqvp?utm_source=generator" width="100%" height="80" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          </div>
+        </div>
+     </div>
+    </div>
+    
+    <div class="box">
+      <div class="main">
+        <div class="all_plate" id="mhuukrob">
+          <div class="shellac"><div class="disc5" id="lilac"></div></div>
+          <div class="plate p1 img5"></div>
+          <div class="plate p2 color5_2"></div>
+          <div class="plate p4 color5_3"></div>
+          <div class="plate p5 color5_2"></div>
+          <div class="plate p6 color5_1"></div>
+          <div class="plate p3 color5_2"></div>
+          <div class="plate shadow"></div>
+          <p class="content">FERN<br>"ท้องฟ้า"</p>
+          <div class="music">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4KRH5emKl7a7Qo1nqmWFKb?utm_source=generator" width="100%" height="80" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            </div>
+       </div>
+      </div>
+    </div>
+      <!-- <p class="content">LILAC<br>MhuuKrob's pick</p> -->
+    
+    <div class="box">
+      <div class="main">
+        <div class="all_plate" id="mhuukrob">
+          <div class="shellac"><div class="disc6" id="lilac"></div></div>
+          <div class="plate p1 img6"></div>
+          <div class="plate p2 color6_2"></div>
+          <div class="plate p4 color6_3"></div>
+          <div class="plate p5 color6_2"></div>
+          <div class="plate p6 color6_1"></div>
+          <div class="plate p3 color6_2"></div>
+          <div class="plate shadow"></div>
+          <p class="content">Bill<br>"Carnivore"</p>
+          <div class="music">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4j41Du0uMXJrfEY7Xe9CDO?utm_source=generator" width="100%" height="80" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            </div>
+      </div>
+     </div>
+    </div>
+  <!-- </div> -->
+
+   <!-- <div class="container"> -->
+    <div class="box">
+      <div class="main">
+        <div class="all_plate" id="mhuukrob">
+          <div class="shellac"><div class="disc7" id="lilac"></div></div>
+          <div class="plate p1 img7"></div>
+          <div class="plate p2 color7_2"></div>
+          <div class="plate p4 color7_3"></div>
+          <div class="plate p5 color7_2"></div>
+          <div class="plate p6 color7_1"></div>
+          <div class="plate p3 color7_2"></div>
+          <div class="plate shadow"></div>
+          <p class="content">Boss<br>"Until Then"</p>
+          <div class="music">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3crZQarcOagdupRZNzRGWe?utm_source=generator&amp;theme=0" width="100%" height="80" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          </div>
+          
+      </div>
+     </div>
+      <!-- <p class="content">LILAC<br>MhuuKrob's pick</p> -->
+    </div>
+    <div class="box">
+      <div class="main">
+        <div class="all_plate" id="mhuukrob">
+          <div class="shellac"><div class="disc8" id="lilac"></div></div>
+          <div class="plate p1 img8"></div>
+          <div class="plate p2 color8_2"></div>
+          <div class="plate p4 color8_3"></div>
+          <div class="plate p5 color8_2"></div>
+          <div class="plate p6 color8_1"></div>
+          <div class="plate p3 color8_2"></div>
+          <div class="plate shadow"></div>
+          <p class="content">KENG<br>"มีปัญหาปรึกษาดาว"</p>
+          <div class="music">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/07ShAWKUOaqPeGq8Ick3Lq?utm_source=generator" width="100%" height="80" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          </div>
+        </div>
+      </div>
+     </div>
+    
+      <!-- <p class="content">LILAC<br>MhuuKrob's pick</p> -->
+   <!-- </div class="container"> -->
+    <div class="box">
+      <div class="main">
+        <div class="all_plate" id="mhuukrob">
+          <div class="shellac"><div class="disc9" id="lilac"></div></div>
+          <div class="plate p1 img9"></div>
+          <div class="plate p2 color9_2"></div>
+          <div class="plate p4 color9_3"></div>
+          <div class="plate p5 color9_2"></div>
+          <div class="plate p6 color9_1"></div>
+          <div class="plate p3 color9_2"></div>
+          <div class="plate shadow"></div>
+          <p class="content">Book<br>"Renegades"</p>
+          <div class="music">
+           <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/29VVYrV5TVpGu0IfoTXlcw?utm_source=generator" width="100%" height="80" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe></div>
+      </div>
+     </div>
+    </div>
+  <!-- </div> -->
+
+   <!-- <div class="container"> -->
+    <div class="box">
+      <div class="main">
+        <div class="all_plate" id="mhuukrob">
+          <div class="shellac"><div class="disc10" id="lilac"></div></div>
+          <div class="plate p1 img10"></div>
+          <div class="plate p2 color10_2"></div>
+          <div class="plate p4 color10_3"></div>
+          <div class="plate p5 color10_2"></div>
+          <div class="plate p6 color10_1"></div>
+          <div class="plate p3 color10_2"></div>
+          <div class="plate shadow"></div>
+          <p class="content">NEW<br>"AKUMA NO KO"</p>
+          <div class="music">
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2TVFbLCdzrX0RdhWNWJmdp?utm_source=generator" width="100%" height="80" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe></div>    
+      </div>
+     </div>
+    </div>
+    <div class="box">
+      <div class="main">
+        <div class="all_plate" id="mhuukrob">
+          <div class="shellac"><div class="disc11" id="lilac"></div></div>
+          <div class="plate p1 img11"></div>
+          <div class="plate p2 color11_2"></div>
+          <div class="plate p4 color11_3"></div>
+          <div class="plate p5 color11_2"></div>
+          <div class="plate p6 color11_1"></div>
+          <div class="plate p3 color11_2"></div>
+          <div class="plate shadow"></div>
+          <p class="content">NENG<br>"I Love you so"</p>
+          <div class="music">
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4SqWKzw0CbA05TGszDgMlc?utm_source=generator&amp;theme=0" width="100%" height="80" frameborder="0" allowfullscreen="" allow="autoplay ; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe></div>
+          
+      </div>
+     </div>
+    </div>
+    </div>
+
+</body>
+</html>

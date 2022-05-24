@@ -1,0 +1,22 @@
+<!-- ให้เปลี่ยนพื้นหลัง ให้เลื่อนไปเรื่อยๆ ด้วย background-poisition และ animation 
+เปลี่ยนภาพได้เต็มที่ เปลี่ยนมุมได้ สังเกตการใช้ background-position-x และ background-size
+
+วัตถุประสงค์ คือให้ลองแก้และอ่าน property ที่อาจจะไม่เคยใช้
+และลองเขียน animation ว่าจำได้มั้ยว่าแก้อย่างไรได้บ้าง
+-->
+<style>
+  body{
+    height:100vh;
+    background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAACgCAMAAADHEAL6AAAAFVBMVEX///8AAAD/mf+ZmZn/zJn/M5n/mZly7fXaAAABxUlEQVR4nO3au3LCMBBAUUhI/v+T08jNzmy0shdjmHNLoueBQkVut6buF6nrPiBAgAABAgSI8wAeF+llICBAgAABAgSINoCvk3o5CAgQIECAAAGiDWL1Ij+j6udVEBAgQIAAAQLE+0AcvUhXIECAAAECBIj3hzjaPRT/nkFnEHE9ECBAgAABAsTnQWzrfocykBnEbD0QIECAAAECxHGIODHWDZE9iLKDV0EixGwdECBAgAABAkQfRDYhTjwKkTW7QHauWHU+CBAgQIAAAaIPogpShVj9h5HqRY4GAgQIECBAgOiD2Aty9EG1QZ0FUAYBAQIECBAgQCxDrIJEiNUH1NYMIp6retHZPBAgQIAAAQJEP0QGEjv6oKpCzL6YOK46DwQIECBAgADxPIgZzCpE9uCKB/0NZRdfLa4LAgQIECBAgDgPIoI8QrMLZ1Uh4rjVz0GAAAECBAgQ14WIIKtlF4oXWy1bZzcACBAgQIAAAWI3QCwD2dsMZG/tvwQQIECAAAECRBlgtsHVa/slgBiBGIEYgRiBGIEYgRjNAKrju/bt3g8ECBAgQIAA8TyIrOr47v1n4/but3wQECBAgPjvICBAfCbEH+yzElBvujPUAAAAAElFTkSuQmCC');
+    background-size:50px;
+    background-position-y:80%;
+    background-position-x:80%;
+
+    animation: move 5s infinite ease-out;
+  }
+  @keyframes move {
+  to {background-position: 0 0;
+  }
+</style>
+<script>
+</script>

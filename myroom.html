@@ -1,0 +1,137 @@
+<html>
+  <head>
+    <title>SVG
+    </title>
+    <style>
+      body{
+        background:#666;
+        margin:0em;
+        margin-top:2em;
+        font-family:sans-serif;
+      }
+      svg{
+        background:#b5e3d0;
+        width:90vmin;
+        height:90vmin;
+        display:block;
+        margin:auto;
+        box-shadow:0px 0px 10px #0006;
+      }
+    </style>
+  </head>
+  <body>
+      <!-- v แนวตั้ง h แนวนอน -->
+    <svg viewBox="0 0 100 100">
+        <!-- room -->
+      <path d="m10 35 v30 l40,20 l41 -20 v-31 l-41 -15 z" fill="#FF5733" stroke="#00"/>
+      <path d="m50,19 v31" stroke="black" stroke-opacity="0.1" stroke-linecap="butt"/>
+      <path d="m50,50 l40 15" stroke="black" stroke-opacity="0.1" stroke-linecap="butt"/>
+      <path d="m50,50 l-40 15" stroke="black" stroke-opacity="0.1" stroke-linecap="butt"/>
+      <path d="m9.5 34 v31.4 l40.5,20 l40.5,-20 v-31.4" stroke="#050505" fill="#0000" stroke-width="1.5"/>
+      <path d="m10.5,35 l39.5,-15 l39.5,15 l1.5,-1 l-41,-15.5 l-41,15.5 l1.5,1" stroke="#" fill="#466360" stroke-width="0.3"/>
+      <!-- TV -->
+      <path d="m60,28 l25,10 v20 l-25,-10 z" stroke="black" fill="black">
+        <animate attributeName="fill" values="
+                                            hsl(78, 80%, 65%);
+                                            hsl(200,80%,70%);
+                                            hsl(200,100%,90%);
+                                            hsl(200,80%,70%);
+                                            hsl(78, 80%, 65%);
+        "dur="10" repeatCount="indefinite"/>
+      </path>
+      <path d="m69,47 v-10 l5,12 v-10" stroke="red" fill="white">
+        <animate attributeName="fill" values="
+                                            hsl(78, 80%, 65%);
+                                            hsl(200,80%,70%);
+                                            hsl(200,100%,90%);
+                                            hsl(200,80%,70%);
+                                            hsl(78, 80%, 65%);
+        "dur="10" repeatCount="indefinite"/>
+      </path>
+<!--       หมอนข้าง -->
+      <path d="m58,46.7 l27.4,11.5" stroke="purple" stroke-width="2" stroke-linecap="round" strike-opacity="0.05">
+            <animate attributeName="stroke" values="
+                                              violet;
+                                              indigo;
+                                              blue;
+                                              green;
+                                              yellow;
+                                              orange;
+                                              red;                                           "dur="5" repeatCount="indefinite"/>
+      </path>
+      <g id="pillow">
+       <path d="m42,73 l10,-4  z l-5,-4 l10,-4 l5,4 " stroke ="black" fill="black" stroke-width="0.2" 
+              />
+         <path d="m42,72.5 l10,-4  z l-5,-4 l10,-4 l5,4 " stroke ="rgb(228, 174, 197)" fill="rgb(228, 174, 197)" stroke-width="0.2" 
+              />
+      </g>
+      
+<!--       table japan -->
+      <g id="TABLE">
+
+         <path d="m63,71.5 v3 l-1,-0.4 v-3 " stroke ="black" fill="rgb(54, 21, 0)" stroke-width="0.1" 
+              />
+
+        <path d="m63,71.5 v3 l1,-0.4 v-3 " stroke ="black" fill="rgb(96, 54, 1)" stroke-width="0.1" 
+              />
+        <path d="m55,74.6 v3 l-1,-0.4 v-3  " stroke ="black" fill="rgb(96, 54, 1)" stroke-width="0.1" 
+              />
+        <path d="m55,74.6 v3 l1,-0.4 v-3  " stroke ="black" fill="rgb(96, 54, 1)" stroke-width="0.1" 
+              />
+
+         <path d="m48,71.6 v3  l-1,0.4 v-3" stroke ="black" fill="rgb(54, 21, 0)" stroke-width="0.1" 
+              />
+         <path d="m46,71.6 v3 l1,0.4 v-3 l-1,-0.4" stroke ="black" fill="rgb(96, 54, 1)" stroke-width="0.1" 
+              />
+        <path d="m55,74, v1.5 l10,-4.2 v-1.1" stroke ="black" fill="rgb(96, 54, 1)" stroke-width="0.1" 
+              />
+        <path d=" m55,74 v1.5 l-10,-4.2 v-1"stroke ="black" fill="rgb(96, 54, 1)" stroke-width="0.1"
+              />
+        <path d="m45,70 l10,-4.2 l10,4.2 l-10,4.2 l-10,-4,2" stroke ="black" fill="#1b383c" stroke-width="0.1" 
+              />
+
+      </g>
+<!--       com -->
+    <path d="m15,60 v5 l5,2.5 v-5" stroke="" fill="black"/>
+      <path d="m19.9,62 v5.5 l2,-1 v-5z" stroke="" fill="#010c0d"/>
+      <path d="m16,61.5 v3 l3.3,1.7 v-3z" stroke="" fill="#bfbfbf"/>
+      
+      <path d="m12,58 l8,4 l15,-5.5 l-8,-4z" stroke="" fill="#6c8e90"/>
+      <path d="m12,58 v0.5 l8,4 v-0.5 z" stroke="" fill="#151c1c"/>
+      <path d="m20,62 v0.5 l15,-5.5 v-0.5 z" stroke="" fill="#406169"/>
+      
+      <path d="m15.5,51 v7 l10,-3.5 v-7z" stroke="" fill="#071113"/>
+      
+      <path d="m16,59 l4,2 l13,-4.5 l-4,-2" stroke="" fill="black"/>
+      <path d="m18,59 l2,1 l6,-2 l-2,-1" stroke="" fill="white"/>
+      <g transform="rotate(-50)">
+      	<ellipse rx="0.5" ry="0.9" cx="-25" cy="58" fill="white"/>
+      </g>
+      <path d="m50,19 v31" stroke="black" stroke-opacity="0.1" stroke-linecap="butt"/>
+      <path d="m50,50 l40 15" stroke="black" stroke-opacity="0.1" stroke-linecap="butt"/>
+      <path d="m50,50 l-40 15" stroke="black" stroke-opacity="0.1" stroke-linecap="butt"/>
+      
+      <path d="m9.5 34 v31.4 l40.5,20 l40.5,-20 v-31.4" stroke="#050505" fill="#0000" stroke-width="1.5"/>
+      <path d="m10.5,35 l39.5,-15 l39.5,15 l1.5,-1 l-41,-15.5 l-41,15.5 l1.5,1" stroke="#" fill="#466360" stroke-width="0.3"/>
+      
+      <path d="m50,47 l25,9.3 l-15,7 l-25,-11 z" stroke="#00" fill="#3e5d7d"/>
+      <path d="m35,52.2 v4 l25,11 v-4z" stroke="#00" fill="#1b383c"/>
+      <path d="m60,63.2 v4 l14.8,-7 v-4 z" stroke="" fill="#15191c"/>
+      <path d="m35,52.2 v4 l5,2.2 v-4z" stroke="#00" fill="#a6a6a6"/>
+      <path d="m50,47 l5,2 l-15,5.4 l-5,-2.2 z" stroke="#00" fill="#b3b3b3"/>
+      
+      <path d="m30,40 l8,-3 v10 l-8,3 z" stroke="black" fill="white"/>
+      <path d="m34,38.5 v10" stroke="black" fill="white"/>
+<!--       pic -->
+      <defs>
+        <pattern id="img1" patternUnits="userSpaceOnUse" x="2" y="14" width="50%" height="50%">
+          <image xlink:href="https://cdn.discordapp.com/attachments/920339331607035946/964135280409993216/unknown.png" width="30%" height="50%" tranform="roatate("10")"/>
+            </pattern>
+      </defs>
+<path d="m11,36 l15,-6 v15 l-15,6 z" stroke="black" stroke-width="0.3" fill="url(#img1)">
+  
+    </svg>
+  </body>
+</html>
+
+

@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <title>SVG
+    </title>
+    <style>
+      body{
+        background:rgb(34, 32, 32);
+        margin:0em;
+        margin-top:2em;
+        font-family:sans-serif;
+      }
+      svg{
+        background:#0f0c11;
+        width:90vmin;
+        height:90vmin;
+        display:block;
+        margin:auto;
+        box-shadow:0px 0px 10px #0006;
+      }
+      #eye1{
+        transform : scale(0.2) translateY(150px) translateX(150px);
+      }
+      #eye2{
+        transform : scale(0.2) translateY(150px) translateX(230px);
+      }
+      #eye{
+        animation: wave 2s alternate-reverse infinite;
+
+      }
+    
+      @keyframes wave {
+        0% { transform: translateX(0px) }
+        25% { transform: translateX(-2px) }
+        50% { transform: translateX(0px) }
+        100% { transform: translateX(2px) }
+        }
+   
+   
+    </style>
+  </head>
+  <body>
+      <!-- /*/v แนวตั้ง h แนวนอน/*/ -->
+    <svg viewBox="0 0 100 100" >
+        <g id="fox">
+        <!-- background -->  
+            <g id="bgg">
+                <path d="M36,67 C-2,37 64,-1 79,37" stroke="#09E6A4" fill="#09E6A4" opacity="0.7"/>
+                <path d="M34,45 C21,100 109,72 75,27" stroke="#09E6A4" fill="#09E6A4" opacity="0.9"/>
+            </g>
+        <!-- หูซ้าย -->
+            <path d="m25,25 l20,10 l-20,10 l5,-10z" stroke="#F7623A" fill="#F7623A"/> 
+        <!-- หูขวา -->
+            <path d="m75,25 l-20,10 l20,10 l-5,-10z" stroke="#F7623A" fill="#F7623A"/> 
+        <!-- หัว -->
+            <path d="m45,35 h5 v30 l-5,5 l-5,-10 l-15,-14 z" stroke="#EB7839" fill="#EB7839"/> 
+            <path d="m55,35 h-5 v30 l5,5 l5,-10 l15,-14 z" stroke="#FA915A" fill="#FA915A"/>
+            <path d="m50,65 l5,5 l-5,5 l-5,-5z" stroke="#712A11" fill="#712A11"/>
+        <!-- ตัว -->
+        <path d="m50,65 l20,20 h-40 z" stroke="#F7623A" fill="#F7623A"/>
+        <path d="m50,70 l10,10 h-20 z" stroke="#FA915A" fill="#FA915A"/>
+        
+        
+        <path d="m50,65 l5,5 l-5,5 l-5,-5z" stroke="#712A11" fill="#712A11"/>
+            
+            
+        <!-- ตา -->
+        <g id="eye">
+            <g id="eye1">
+            <path d="m50,70 a1 1,0,1 1,20 0" stroke="black" fill="black"/>
+            <path d="m50,70 a1 1,0,0 0,20 0" stroke="black" fill="black"/>
+            </g>
+            <g id="eye2">
+                <path d="m50,70 a1 1,0,1 1,20 0" stroke="black" fill="black"/>
+                <path d="m50,70 a1 1,0,0 0,20 0" stroke="black" fill="black"/>
+            </g>
+        </g>
+
+    </svg>
+  </body>
+</html>
+
+

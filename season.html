@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        body {
+        background : beige ;
+        margin : 0 ;
+        padding : 0 ;
+        transition: all .3s;
+        }
+        .container {
+        width: 80%;
+        margin: 0 auto;
+        display :flex;
+        justify-content:space-evenly;
+        flex-wrap:wrap;
+        
+        }
+
+        .card{
+        margin : auto;
+        width: 350px;
+        overflow : hidden;
+        border-radius : 20px;
+        background : rgba(177, 92, 1, 0.7);
+        margin-top:50px;
+        transition: all .2s;
+        box-shadow:5px 5px 15px rgba(0,0,0, .3);
+         
+        }
+
+        .card:hover {
+        box-shadow:5px 5px 25px rgba(0,0,0, .5);
+        transform: translate(-5px, -5px);
+        }
+
+
+        .img-cover{
+        position: relative;
+        }
+
+        .card img{
+        width: 350px;
+        height:350px;
+        object-fit:cover;
+        }
+
+        .desc{
+        padding : 1.5em ;
+        font-family: 'Poppins', sans-serif;
+        }
+        .desc h1{
+        display:inline;
+        color: #76c6eb;
+        }
+        .tdesc{
+        margin-bottom:40px;
+        width:100%;
+        height:50px;
+        overflow: auto;
+        }
+
+        .desc a{
+        text-decoration: none;
+        background-color: dodgerblue;
+        padding: 15px 25px;
+        color:white;
+        border-radius: 15px;
+        display:block;
+        text-align: center;
+        transition: all .2s;
+        }
+        .desc p:hover{
+        color: #f77548;
+        }
+        .desc p:hover svg{
+        animation : iconjln 1s;
+        }
+        .leaves {
+        position: absolute;
+        }
+
+        .leaf1 {
+        position: absolute;
+        font-size: 70px;
+        top:0;
+        animation: fall 5s linear infinite;
+        }
+
+        .leaf2 {
+        position: absolute;
+        font-size: 55px;
+        top:0;
+        animation: fall2 6s linear infinite;
+        }
+
+        .leaf3 {
+        position: absolute;
+        font-size: 40px;
+        top:-400px;
+        left:-100px;
+        animation: fall 4s linear infinite 1s;
+        }
+        .leaf13 {
+        position: absolute;
+        font-size: 40px;
+        top:-400px;
+        left:-100px;
+        animation: fall 4s linear infinite 3s;
+        }
+
+        .leaf4 {
+        position: absolute;
+        font-size: 45px;
+        top:-400px;
+        left:300px;
+        animation: fall2 4s linear infinite 1.5s;
+        }
+
+        .leaf5 {
+        position: absolute;
+        font-size: 30px;
+        top:-410px;
+        left:250px;
+        animation: fall3 4s linear infinite 2s;
+        }
+        .leaf12 {
+        position: absolute;
+        font-size: 70px;
+        top:0;
+        animation: fall 5s linear infinite;
+        }
+
+        @keyframes fall {
+        0% {top:-410px; transform: translateX(-100px) rotateX(180deg);}
+        100% {top:400px; transform: translateX(250px) rotateX(-180deg);}
+        }
+
+        @keyframes fall2 {
+        0% {top:-410px; transform: translateX(50px) rotateX(-90deg);}
+        100% {top:400px; transform: translateX(-350px) rotateX(180deg);}
+        }
+
+        @keyframes fall3 {
+        0% {top:-430px; transform: translateX(0px) rotateX(-180deg);}
+        100% {top:400px; transform: translateX(-400px) rotateX(180deg);}
+        }
+
+        @keyframes fall4 {
+        0% {top:-430px; transform: translateX(0px) rotateY(-180deg);}
+        100% {top:400px; transform: translateX(-400px) rotateY(180deg);}
+        }
+
+        @keyframes fall5 {
+        0% {top:-410px; transform: translateX(-100px) rotateY(180deg);}
+        100% {top:400px; transform: translateX(250px) rotateY(-180deg);}
+        }
+
+        .leaf6 {
+        position: absolute;
+        font-size: 55px;
+        top:-410px;
+        left:-250px;
+        animation: fall3 4s linear infinite 1.5s;
+        }
+
+        .leaf7 {
+        position: absolute;
+        font-size: 35px;
+        top:-410px;
+        left:-350px;
+        animation: fall2 5s linear infinite .5s;
+        }
+
+        .leaf8 {
+        position: absolute;
+        font-size: 75px;
+        top:-430px;
+        left:550px;
+        animation: fall3 5s linear infinite .5s;
+        }
+
+        .leaf9 {
+        position: absolute;
+        font-size: 35px;
+        top:-430px;
+        left:150px;
+        animation: fall4 6s linear infinite .3s;
+        }
+
+        .leaf10 {
+        position: absolute;
+        font-size: 55px;
+        top:-430px;
+        left:450px;
+        animation: fall5 3.7s linear infinite 1.3s;
+        }
+
+        .leaf11 {
+        position: absolute;
+        font-size: 55px;
+        top:-430px;
+        left:650px;
+        animation: fall5 4.7s linear infinite 1.7s;
+        }
+
+        @keyframes iconjln{
+        0%, 100% {
+            opacity : 1;
+            transform: translateX(0%);
+        }
+        50%{
+            opacity:0;
+            transform: translateX(100%);
+        }
+        70%{
+            opacity:0;
+            transform:translateX(-100%);
+        }
+        }
+    </style>
+    <body>
+        <div class="container">
+            <div class="card">
+                <div class="img-cover"><img src="https://images7.alphacoders.com/670/thumbbig-670838.webp"><svg width="5" height="5"></svg>
+            </div>
+              <div class="desc">
+                <h1>Autumn</h1>
+                <p class="tdesc">Nobody is perfect until you fall in love with them.</p>
+              </div>
+            </div>
+            <div class="leaves">
+                <div class="leaf1">🍁</div>
+                <div class="leaf2">🍂</div>
+                <div class="leaf3">🍁</div>
+                <div class="leaf4">🍂</div>
+                <div class="leaf6">🍁</div>
+                <div class="leaf7">🍂</div>
+                <div class="leaf8">🍁</div>
+                <div class="leaf9">🍂</div>
+                <div class="leaf10">🍁</div>
+                <div class="leaf11">🍂</div>
+                <div class="leaf12">🍁</div>
+                <div class="leaf13">🍂</div>
+
+              </div>
+        </div>
+        
+    </body>
+</html>
